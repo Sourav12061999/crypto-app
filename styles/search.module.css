@@ -1,0 +1,18 @@
+.main {
+  width: 90%;
+  height: 50px;
+  margin: auto;
+  display: flex;
+  margin-bottom: 10px;
+}
+.main:hover {
+  border-bottom: 3px solid black;
+  cursor: pointer;
+}
+.img {
+  height: 100%;
+  width: 30%;
+}
+.img > img {
+  height: 100%;
+}

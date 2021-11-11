@@ -1,0 +1,43 @@
+.main {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  padding-top: 5%;
+}
+.main > div {
+  transition: box-shadow 500ms;
+}
+.main > div:hover {
+  box-shadow: 2px 2px 2px 2px rgb(223, 222, 222);
+}
+.left {
+  width: 50%;
+  border: 1px solid rgb(224, 224, 224);
+  margin-right: 10%;
+  padding: 2%;
+}
+.left > p {
+  background-color: black;
+  padding-left: 2px;
+  width: 80px;
+  color: white;
+  border-radius: 5px;
+}
+.logo {
+  display: flex;
+}
+.logo > img {
+  display: block;
+  height: 40px;
+  margin-top: 2.5%;
+  margin-right: 3%;
+}
+.right {
+  width: 40%;
+  border: 1px solid rgb(224, 224, 224);
+  padding: 2%;
+}
+.right a {
+  text-decoration: underline;
+  color: blue;
+}

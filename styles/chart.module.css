@@ -1,0 +1,14 @@
+.main {
+  width: 90%;
+  margin: auto;
+  margin-top: 5%;
+}
+.button {
+  margin-bottom: 3%;
+  margin-left: 60%;
+}
+.button > button {
+  margin: 0px 0.5%;
+  border: none;
+  padding: 2%;
+}

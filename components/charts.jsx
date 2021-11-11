@@ -30,6 +30,8 @@ function Charts({ chartData, coinid }) {
   if (chart.prices[0][1] > chart.prices[chart.prices.length - 1][1]) {
     stroke = "#F44336";
   }
+  let min = null;
+  let max = 0;
   chart.prices.forEach((element) => {
     let obj = {};
     let d = new Date(element[0]);
@@ -37,8 +39,16 @@ function Charts({ chartData, coinid }) {
     let date = `${monthNames[d.getMonth()]} ${d.getDate()}
                     (${year})`;
     obj.date = date;
-    obj.price = element[1].toFixed(2);
+    obj.price = +element[1].toFixed(2);
     data.push(obj);
+    if (min == null) {
+      min = element[1].toFixed(2);
+    } else if (min > element[1].toFixed(2)) {
+      min = +element[1].toFixed(2);
+    }
+    if (max < element[1].toFixed(2)) {
+      max = +element[1].toFixed(2);
+    }
   });
   async function changeChart(days, interval) {
     let response = await fetch(
@@ -73,6 +83,13 @@ function Charts({ chartData, coinid }) {
         </button>
         <button
           onClick={() => {
+            changeChart(366, "daily");
+          }}
+        >
+          1year
+        </button>
+        <button
+          onClick={() => {
             changeChart("max", "monthly");
           }}
         >
@@ -89,7 +106,7 @@ function Charts({ chartData, coinid }) {
         <Line type="basis" dataKey="price" stroke={stroke} dot={false} />
         {/* <CartesianGrid stroke="#ccc" /> */}
         <XAxis dataKey="date" />
-        <YAxis domain={["dataMin", "dataMax"]} />
+        <YAxis domain={[min, max]} allowDataOverflow={true} />
         <Tooltip />
       </LineChart>
     </div>

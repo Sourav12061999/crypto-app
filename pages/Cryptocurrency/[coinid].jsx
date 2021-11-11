@@ -36,22 +36,13 @@ function Coindetails({ data, chart }) {
             <div className={styles.right}>
               <h1>Info</h1>
               <h3>
-                Webside:-{" "}
-                <a href={data.links.homepage[0]} target="_blank">
-                  {data.links.homepage[0]}
-                </a>
+                Webside:- <p>{data.links.homepage[0]}</p>
               </h3>
               <h3>
-                Reddit:-{" "}
-                <a href={data.links.subreddit_url} target="_blank">
-                  {data.links.subreddit_url}
-                </a>
+                Reddit:- <p>{data.links.subreddit_url}</p>
               </h3>
               <h3>
-                Github Repo:-{" "}
-                <a href={data.links.subreddit_url} target="_blank">
-                  {data.links.repos_url.github[0]}
-                </a>
+                Github Repo:- <p>{data.links.repos_url.github[0]}</p>
               </h3>
             </div>
           </>
